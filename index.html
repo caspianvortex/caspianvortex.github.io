@@ -34,6 +34,12 @@
   .net{height:78px;border-top:10px solid var(--foam);background:
     repeating-linear-gradient(45deg,transparent 0 11px,rgba(46,196,182,.5) 11px 12.5px),
     repeating-linear-gradient(-45deg,transparent 0 11px,rgba(46,196,182,.5) 11px 12.5px),var(--ink)}
+  #about,#watch,#contact{position:relative;overflow:hidden}
+  section>.wrap{position:relative}
+  .wm{position:absolute;width:min(420px,72vw);aspect-ratio:1;opacity:.1;pointer-events:none}
+  #about .wm{right:-140px;bottom:-110px}
+  #watch .wm{left:-150px;top:-80px}
+  #contact .wm{right:-120px;bottom:-130px;opacity:.14}
   .court{position:relative;overflow:hidden}
   .court>svg{position:absolute;right:-4%;top:50%;width:min(720px,90%);translate:0 -50%;fill:none;stroke:var(--foam);stroke-width:3;opacity:.13;pointer-events:none}
   .court>.wrap{position:relative}
@@ -124,7 +130,7 @@
           <defs><path id="arm" d="M318,300 L319,302 L320,304 L321,306 L322,308 L323,311 L323,314 L323,317 L323,320 L322,323 L321,326 L320,329 L318,333 L316,336 L313,339 L310,342 L307,344 L303,346 L298,348 L294,350 L289,351 L284,352 L279,352 L273,352 L268,351 L262,350 L256,347 L251,345 L245,342 L240,338 L235,333 L230,328 L226,322 L222,316 L219,309 L217,302 L215,295 L213,287 L213,279 L213,270 L214,262 L216,253 L218,245 L222,236 L226,228 L232,220 L238,212 L245,205 L252,199 L261,193 L270,187 L280,183 L290,179 L301,177 L312,175 L323,174 L335,174 L347,176 L359,178 L371,182 L382,187 L393,193 L404,200 L414,208 L424,218 L433,228 L441,239 L448,251 L454,264 L459,277 L463,291 L466,306 L467,321 L467,336 L465,352 L462,367 L457,382 L452,397 L444,412 L435,426 L425,439 L414,452 L401,463 L387,474 L373,483 L357,491 L340,498 L322,503 L304,507 L286,509 L267,509 L248,508 L229,505 L210,500 L191,493 L173,485 L155,475 L139,463 L123,450 L108,435 L95,418 L83,401 L72,382 L64,362 L56,341 L51,320 L48,297 L47,275 L47,252 L50,229 L55,206 L62,183 L71,161 L82,140 L96,120 L111,100 L128,82 L146,66 L166,51 L188,37 L211,26"/></defs>
           <g class="arms"><use href="#arm" transform="rotate(0 300 300)"/><use href="#arm" transform="rotate(72 300 300)"/><use href="#arm" transform="rotate(144 300 300)"/><use href="#arm" transform="rotate(216 300 300)"/><use href="#arm" transform="rotate(288 300 300)"/></g>
           <defs>
-        <clipPath id="bc"><circle r="98"/></clipPath>
+        <clipPath id="bc"><circle r="98"/></clipPath><g id="vb"><circle r="98" fill="#eaf7f4"/><g clip-path="url(#bc)"><g transform="rotate(0)"><use href="#p" transform="translate(0,-27)" stroke="#06202b" stroke-width="29"/><use href="#p" transform="translate(0,0)" stroke="#06202b" stroke-width="29"/><use href="#p" transform="translate(0,27)" stroke="#06202b" stroke-width="29"/></g><g transform="rotate(120)"><use href="#p" transform="translate(0,-27)" stroke="#06202b" stroke-width="29"/><use href="#p" transform="translate(0,0)" stroke="#06202b" stroke-width="29"/><use href="#p" transform="translate(0,27)" stroke="#06202b" stroke-width="29"/></g><g transform="rotate(240)"><use href="#p" transform="translate(0,-27)" stroke="#06202b" stroke-width="29"/><use href="#p" transform="translate(0,0)" stroke="#06202b" stroke-width="29"/><use href="#p" transform="translate(0,27)" stroke="#06202b" stroke-width="29"/></g><g transform="rotate(0)"><use href="#p" transform="translate(0,-27)" stroke="#2ec4b6" stroke-width="24"/><use href="#p" transform="translate(0,0)" stroke="#ffd23f" stroke-width="24"/><use href="#p" transform="translate(0,27)" stroke="#2ec4b6" stroke-width="24"/></g><g transform="rotate(120)"><use href="#p" transform="translate(0,-27)" stroke="#2ec4b6" stroke-width="24"/><use href="#p" transform="translate(0,0)" stroke="#ffd23f" stroke-width="24"/><use href="#p" transform="translate(0,27)" stroke="#2ec4b6" stroke-width="24"/></g><g transform="rotate(240)"><use href="#p" transform="translate(0,-27)" stroke="#2ec4b6" stroke-width="24"/><use href="#p" transform="translate(0,0)" stroke="#ffd23f" stroke-width="24"/><use href="#p" transform="translate(0,27)" stroke="#2ec4b6" stroke-width="24"/></g></g><circle r="98" fill="none" stroke="#06202b" stroke-width="3"/></g>
         <path id="p" d="M-10,8 C28,-22 62,-40 112,-30" fill="none" stroke-linecap="butt"/>
       </defs>
       <g class="ball" transform="translate(300 300) scale(1.55)">
@@ -156,6 +162,7 @@
 
 <main>
   <section id="about">
+    <svg class="wm" viewBox="-100 -100 200 200" aria-hidden="true"><use href="#vb"/></svg>
     <div class="wrap cols">
       <h2>About</h2>
       <div>
@@ -201,6 +208,7 @@
   </section>
 
   <section id="watch">
+    <svg class="wm" viewBox="-100 -100 200 200" aria-hidden="true"><use href="#vb"/></svg>
     <div class="wrap cols">
       <h2>Follow along</h2>
       <ul class="rows">
@@ -217,6 +225,7 @@
   </section>
 
   <section id="contact" class="dark">
+    <svg class="wm" viewBox="-100 -100 200 200" aria-hidden="true"><use href="#vb"/></svg>
     <div class="wrap cols">
       <h2>Contact</h2>
       <div>
