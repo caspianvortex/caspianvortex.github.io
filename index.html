@@ -79,6 +79,17 @@
   .avatar img{width:100%;height:100%;object-fit:cover}
   .people b{display:block;line-height:1.2}
   .people span:not(.avatar){color:var(--sea);font-size:.95rem}
+  .coaches{display:grid;gap:16px;margin-bottom:16px}
+  .coach{display:grid;grid-template-columns:minmax(120px,34%) 1fr;border:2px solid var(--ink);border-radius:20px;overflow:hidden}
+  .coach .photo{position:relative;background:var(--sea);color:var(--foam);display:grid;place-items:center;font-family:var(--display);font-weight:800;font-size:3rem;min-height:100%}
+  .coach .photo img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center 18%}
+  .coach .txt{padding:18px 20px}
+  .coach .role{margin:0 0 2px;color:var(--sea);font-weight:600;font-size:.85rem;text-transform:uppercase;letter-spacing:.06em}
+  .coach h4{font-family:var(--display);font-weight:800;font-size:1.9rem;line-height:1;margin:0 0 10px;text-transform:uppercase}
+  .coach .txt p:not(.role){margin:0 0 10px;font-size:.98rem;line-height:1.55}
+  .coach .more{font-weight:600;font-size:.95rem}
+  .credit{margin:14px 0 0;font-size:.9rem;color:var(--sea)}
+  @media (max-width:520px){.coach{grid-template-columns:1fr}.coach .photo{aspect-ratio:1/1.05;min-height:0}}
   .staff{margin:0;border-top:2px solid var(--ink)}
   .staff div{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 16px;padding:14px 0;border-bottom:2px solid var(--ink)}
   .staff dt{color:var(--sea);font-weight:500}
@@ -169,11 +180,39 @@
         <p class="lede">Caspian Vortex is a rep volleyball team from Newmarket, Ontario, part of Caspian Sports Club. The team started at 12U in 2024-25, played 13U in 2025-26, and is playing 14U this season. It travels to tournaments across the season and goes to the Ontario provincials and national championships.</p>
 
         <h3 class="sub">Coaches and manager</h3>
+        <div class="coaches">
+          <article class="coach">
+            <div class="photo"><span aria-hidden="true">NS</span><img src="https://static.wixstatic.com/media/8f2518_f92ba896312f4052890cd8f7a22fa855~mv2.jpg/v1/fit/w_520,h_720,q_80/Nader-Shavandi.jpg" alt="Nader Shavandi, club director and coach" width="520" height="715" loading="lazy" decoding="async"></div>
+            <div class="txt">
+              <p class="role">Club director and coach</p>
+              <h4>Nader Shavandi</h4>
+              <p>Founded Caspian Sport Club in Newmarket in 2017. An internationally certified volleyball coach with a PhD in Exercise Physiology, he has worked with Iran's senior national team, served as National Youth Development Coach for Canada, and coached and studied the sport in Iran, Turkey, Japan and Canada. He has taken part in international competitions including the World Cup, Asian Games and FISU Games.</p>
+              <a class="more" href="https://www.caspian-sportsclub.ca/meet-the-staff" target="_blank" rel="noopener">Full bio on the club site</a>
+            </div>
+          </article>
+          <article class="coach">
+            <div class="photo"><span aria-hidden="true">RA</span><img src="https://static.wixstatic.com/media/8f2518_02fe465b7f2e44bd83cf3153e8df890a~mv2.jpg/v1/fit/w_520,h_720,q_80/Reza-Asgarpour.jpg" alt="Reza Asgarpour, head coach" width="520" height="715" loading="lazy" decoding="async"></div>
+            <div class="txt">
+              <p class="role">Head coach</p>
+              <h4>Reza Asgarpour</h4>
+              <p>Started playing volleyball as a junior in elementary school and joined several youth teams in Tehran. After moving to Canada he played for George Brown College, and he now plays outside and middle attacker for the Centennial College Colts. As a Caspian coach he enjoys leading kids and watching them grow.</p>
+              <a class="more" href="https://www.caspian-sportsclub.ca/meet-the-staff" target="_blank" rel="noopener">Full bio on the club site</a>
+            </div>
+          </article>
+          <article class="coach">
+            <div class="photo"><span aria-hidden="true">SJ</span><img src="https://static.wixstatic.com/media/8f2518_e57cca9e6658450188ddb0ee2ba86dd8~mv2.jpg/v1/fit/w_520,h_720,q_80/Saeideh-Jafari.jpg" alt="Saeideh Jafari, assistant coach" width="520" height="674" loading="lazy" decoding="async"></div>
+            <div class="txt">
+              <p class="role">Assistant coach</p>
+              <h4>Saeideh Jafari</h4>
+              <p>A Canadian-certified, International Level 2 volleyball coach and a former Premier League player and captain of Sepahan, one of Iran's top professional clubs. She has been head coach of junior, youth and U23 teams and has worked with national youth and junior teams. Her training combines science-based volleyball with sport psychology to build focus, confidence and team spirit.</p>
+              <a class="more" href="https://www.caspian-sportsclub.ca/meet-the-staff" target="_blank" rel="noopener">Full bio on the club site</a>
+            </div>
+          </article>
+        </div>
         <ul class="people">
-          <li><span class="avatar" aria-hidden="true">RA</span><div><b>Reza Asgarpour</b><span>Head coach</span></div></li>
-          <li><span class="avatar" aria-hidden="true">SJ</span><div><b>Saeideh Jafari</b><span>Assistant coach</span></div></li>
           <li><span class="avatar" aria-hidden="true">PH</span><div><b>Parinaz Honar</b><span>Team manager</span></div></li>
         </ul>
+        <p class="credit">Coach photos and bios come from the <a href="https://www.caspian-sportsclub.ca/meet-the-staff" target="_blank" rel="noopener">Caspian Sport Club staff page</a>.</p>
 
         <h3 class="sub">Season by season</h3>
         <ol class="seasons">
