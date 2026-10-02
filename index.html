@@ -4,59 +4,197 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Caspian Vortex Volleyball</title>
+<meta name="description" content="Caspian Vortex, a rep volleyball team from Newmarket, Ontario. Schedule, game videos and where to follow the team.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Display:wght@700;800;900&family=Instrument+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
-  :root { --main:#0b5ed7; --bg:#f7f9fc; --text:#1b1f27; }
-  * { box-sizing:border-box; }
-  body { margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif; background:var(--bg); color:var(--text); line-height:1.5; }
-  header { background:var(--main); color:#fff; text-align:center; padding:48px 16px; }
-  header h1 { margin:0 0 8px; font-size:2rem; }
-  nav { background:#fff; position:sticky; top:0; display:flex; justify-content:center; gap:20px; padding:12px; box-shadow:0 1px 4px rgba(0,0,0,.1); }
-  nav a { color:var(--main); text-decoration:none; font-weight:600; }
-  section { max-width:760px; margin:0 auto; padding:32px 16px; }
-  h2 { color:var(--main); }
-  table { width:100%; border-collapse:collapse; background:#fff; }
-  th,td { padding:10px; border-bottom:1px solid #e3e8ef; text-align:left; }
-  th { background:var(--main); color:#fff; }
-  .card { background:#fff; border-radius:12px; padding:20px; box-shadow:0 2px 8px rgba(0,0,0,.06); }
-  footer { text-align:center; padding:24px; color:#666; font-size:.85rem; }
+  :root {
+    --ink:#06202b; --sea:#0b5563; --surf:#2ec4b6; --foam:#eaf7f4; --spike:#ffd23f;
+    --display:"Big Shoulders Display","Arial Narrow","Helvetica Neue",Impact,sans-serif;
+    --body:"Instrument Sans","Helvetica Neue",Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--foam);color:var(--ink);font-family:var(--body);font-size:1.0625rem;line-height:1.6}
+  a{color:inherit}
+  :focus-visible{outline:3px solid var(--spike);outline-offset:3px}
+  .wrap{width:min(1080px,100% - 40px);margin-inline:auto}
+
+  .hero{position:relative;overflow:hidden;background:var(--ink);color:var(--foam);isolation:isolate}
+  .vortex{position:absolute;z-index:-1;right:-18vmin;top:50%;width:min(110vmin,980px);aspect-ratio:1;translate:0 -50%}
+  .vortex svg{width:100%;height:100%;animation:spin 90s linear infinite}
+  .vortex use{fill:none;stroke:var(--surf);stroke-width:2.4;stroke-linecap:round;stroke-linejoin:round;opacity:.5}
+  .vortex use:nth-of-type(odd){stroke:var(--sea);stroke-width:5;opacity:.9}
+  .vortex circle{fill:var(--spike)}
+  @media (max-width:700px){.vortex{width:140vmin;right:-60vmin;top:8%;translate:0 0}}
+  @keyframes spin{to{transform:rotate(360deg)}}
+  @media (prefers-reduced-motion:reduce){.vortex svg{animation:none}}
+  .club{margin:0 0 12px;font-weight:500;color:var(--surf);font-size:1.05rem}
+  h1{font-family:var(--display);font-weight:900;line-height:.82;letter-spacing:-.01em;margin:0;font-size:clamp(4rem,19vw,16rem);text-transform:uppercase}
+  h1 span{display:block}
+  h1 .first{font-size:.36em;font-weight:800;letter-spacing:.02em;line-height:1;margin-bottom:.1em;color:var(--foam)}
+  .tag{max-width:30ch;margin:28px 0 0;font-size:clamp(1.15rem,2.6vw,1.45rem);line-height:1.4}
+  .tag b{color:var(--spike);font-weight:600}
+  .follow{display:flex;flex-wrap:wrap;gap:12px;margin-top:36px}
+  .btn{display:inline-flex;align-items:center;gap:10px;padding:14px 22px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid var(--surf);color:var(--foam);transition:background .2s,color .2s,border-color .2s}
+  .btn svg{width:20px;height:20px;fill:currentColor}
+  .btn:hover{background:var(--surf);color:var(--ink)}
+  .btn.main{background:var(--spike);border-color:var(--spike);color:var(--ink)}
+  .btn.main:hover{background:var(--foam);border-color:var(--foam)}
+
+  .nav{display:flex;flex-wrap:wrap;gap:6px 24px;padding-top:22px}
+  .nav a{font-weight:600;text-decoration:none;padding:6px 0;border-bottom:2px solid transparent}
+  .nav a:hover{border-color:var(--spike)}
+  .hero .wrap{padding-top:0}
+  .hero .content{padding:clamp(48px,12vw,128px) 0 clamp(56px,10vw,104px)}
+
+  section{padding:clamp(56px,9vw,96px) 0}
+  h2{font-family:var(--display);font-weight:800;font-size:clamp(2.4rem,7vw,4rem);line-height:1;margin:0 0 20px;text-transform:uppercase;letter-spacing:.005em}
+  .cols{display:grid;gap:clamp(24px,5vw,64px);grid-template-columns:1fr}
+  @media (min-width:820px){.cols{grid-template-columns:minmax(0,5fr) minmax(0,7fr)}}
+  .lede{max-width:60ch;margin:0}
+  .lede+.lede{margin-top:1em}
+
+  .sub{font-family:var(--display);font-weight:800;font-size:1.7rem;line-height:1;margin:44px 0 14px;text-transform:uppercase}
+  .staff{margin:0;border-top:2px solid var(--ink)}
+  .staff div{display:flex;flex-wrap:wrap;justify-content:space-between;gap:2px 16px;padding:14px 0;border-bottom:2px solid var(--ink)}
+  .staff dt{color:var(--sea);font-weight:500}
+  .staff dd{margin:0;font-weight:600}
+  .medals{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+  .medals i{width:34px;height:34px;border-radius:50%;box-shadow:inset 0 0 0 4px rgba(6,32,43,.18)}
+  .medals .g{background:var(--spike)}
+  .medals .s{background:#b9c6cc}
+  .rows{margin:0;padding:0;list-style:none;border-top:2px solid var(--ink)}
+  .rows li{display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:center;padding:18px 0;border-bottom:2px solid var(--ink)}
+  .rows a{text-decoration:none;font-family:var(--display);font-weight:800;font-size:clamp(1.7rem,5vw,2.6rem);line-height:1.05;text-transform:uppercase}
+  .rows a:hover{color:var(--sea)}
+  .rows small{grid-column:1;font-size:1rem;color:var(--sea);font-weight:500}
+  .rows .go{grid-row:1/3;grid-column:2;width:28px;height:28px;stroke:var(--ink);fill:none;stroke-width:2.4}
+
+  .empty{background:var(--ink);color:var(--foam);border-radius:20px;padding:clamp(24px,4vw,40px)}
+  .empty h3{font-family:var(--display);font-weight:800;font-size:1.8rem;line-height:1.05;margin:0 0 8px;text-transform:uppercase}
+  .empty p{margin:0;max-width:52ch}
+  .empty a{color:var(--spike)}
+
+  .dark{background:var(--sea);color:var(--foam)}
+  .dark h2{color:var(--foam)}
+  .dark .empty{background:var(--ink)}
+
+  footer{background:var(--ink);color:var(--foam);padding:40px 0;font-size:.95rem}
+  footer .wrap{display:grid;gap:8px}
+  footer p{margin:0;max-width:64ch;opacity:.85}
+  footer a{color:var(--spike)}
 </style>
 </head>
 <body>
 
-<header>
-  <h1>🏐 Caspian Vortex</h1>
-  <p>Volleyball team &middot; Ontario</p>
+<header class="hero">
+  <div class="vortex" aria-hidden="true">
+    <svg viewBox="0 0 600 600">
+      <defs><path id="arm" d="M318,300 L319,302 L320,304 L321,306 L322,308 L323,311 L323,314 L323,317 L323,320 L322,323 L321,326 L320,329 L318,333 L316,336 L313,339 L310,342 L307,344 L303,346 L298,348 L294,350 L289,351 L284,352 L279,352 L273,352 L268,351 L262,350 L256,347 L251,345 L245,342 L240,338 L235,333 L230,328 L226,322 L222,316 L219,309 L217,302 L215,295 L213,287 L213,279 L213,270 L214,262 L216,253 L218,245 L222,236 L226,228 L232,220 L238,212 L245,205 L252,199 L261,193 L270,187 L280,183 L290,179 L301,177 L312,175 L323,174 L335,174 L347,176 L359,178 L371,182 L382,187 L393,193 L404,200 L414,208 L424,218 L433,228 L441,239 L448,251 L454,264 L459,277 L463,291 L466,306 L467,321 L467,336 L465,352 L462,367 L457,382 L452,397 L444,412 L435,426 L425,439 L414,452 L401,463 L387,474 L373,483 L357,491 L340,498 L322,503 L304,507 L286,509 L267,509 L248,508 L229,505 L210,500 L191,493 L173,485 L155,475 L139,463 L123,450 L108,435 L95,418 L83,401 L72,382 L64,362 L56,341 L51,320 L48,297 L47,275 L47,252 L50,229 L55,206 L62,183 L71,161 L82,140 L96,120 L111,100 L128,82 L146,66 L166,51 L188,37 L211,26"/></defs>
+      <use href="#arm" transform="rotate(0 300 300)"/>
+      <use href="#arm" transform="rotate(72 300 300)"/>
+      <use href="#arm" transform="rotate(144 300 300)"/>
+      <use href="#arm" transform="rotate(216 300 300)"/>
+      <use href="#arm" transform="rotate(288 300 300)"/>
+      <circle cx="300" cy="300" r="13"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <nav class="nav" aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#schedule">Schedule</a>
+      <a href="#watch">Follow</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="content">
+    <p class="club">Rep volleyball, Newmarket, Ontario</p>
+    <h1><span class="first">Caspian</span><span>Vortex</span></h1>
+    <p class="tag">A 13U team that plays in the <b>Caspian Sports Club</b> rep program.</p>
+    <div class="follow">
+      <a class="btn main" href="https://www.instagram.com/caspian.vortex/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7zm5 3.5A4.5 4.5 0 1 1 7.5 12 4.5 4.5 0 0 1 12 7.5zm0 2A2.5 2.5 0 1 0 14.5 12 2.5 2.5 0 0 0 12 9.5zM17.4 6a1.1 1.1 0 1 1-1.1 1.1A1.1 1.1 0 0 1 17.4 6z"/></svg>
+        Follow on Instagram</a>
+      <a class="btn" href="https://www.youtube.com/playlist?list=PLMyzlsdJSrdfO9VOyx3DuYd0lQqSUQHWy" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21.6 7.2a2.5 2.5 0 0 0-1.8-1.8C18.2 5 12 5 12 5s-6.2 0-7.8.4A2.5 2.5 0 0 0 2.4 7.2C2 8.8 2 12 2 12s0 3.2.4 4.8a2.5 2.5 0 0 0 1.8 1.8C5.8 19 12 19 12 19s6.2 0 7.8-.4a2.5 2.5 0 0 0 1.8-1.8c.4-1.6.4-4.8.4-4.8s0-3.2-.4-4.8zM10 15V9l5.2 3z"/></svg>
+        Watch game videos</a>
+      <a class="btn" href="https://www.facebook.com/CaspianSportClub/" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M13.5 22v-8h2.7l.5-3.3h-3.2V8.6c0-.9.4-1.7 1.8-1.7h1.5V4.1S15.1 3.9 14 3.9c-2.6 0-4.3 1.6-4.3 4.4v2.4H7v3.3h2.7v8z"/></svg>
+        Club on Facebook</a>
+    </div>
+    </div>
+  </div>
 </header>
 
-<nav>
-  <a href="#roster">Roster</a>
-  <a href="#schedule">Schedule</a>
-</nav>
+<main>
+  <section id="about">
+    <div class="wrap cols">
+      <h2>About</h2>
+      <div>
+        <p class="lede">Caspian Vortex is a 13U rep volleyball team from Newmarket, Ontario, part of Caspian Sports Club. The team trains through the season and travels to Ontario Volleyball Association tournaments, with families cheering from the stands.</p>
 
-<section id="roster">
-  <h2>Roster</h2>
-  <div class="card">
-    <table>
-      <tr><th>#</th><th>Player</th><th>Position</th></tr>
-      <tr><td>1</td><td>Player Name</td><td>Setter</td></tr>
-      <tr><td>2</td><td>Player Name</td><td>Outside Hitter</td></tr>
-      <tr><td>3</td><td>Player Name</td><td>Libero</td></tr>
-    </table>
+        <h3 class="sub">Coaching staff</h3>
+        <dl class="staff">
+          <div><dt>Head coach</dt><dd>Reza Asgarpour</dd></div>
+          <div><dt>Assistant coach</dt><dd>Saeideh Jafari</dd></div>
+        </dl>
+
+        <h3 class="sub">2025-26 season</h3>
+        <p class="lede">Ten gold and two silver medals at tournaments.</p>
+        <div class="medals" role="img" aria-label="10 gold medals and 2 silver medals">
+          <i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="g"></i><i class="s"></i><i class="s"></i>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="schedule" class="dark">
+    <div class="wrap cols">
+      <h2>Schedule</h2>
+      <div class="empty">
+        <h3>Dates coming soon</h3>
+        <p>Tournament dates and locations will be posted here. For the latest, follow <a href="https://www.instagram.com/caspian.vortex/" target="_blank" rel="noopener">@caspian.vortex</a> on Instagram.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="watch">
+    <div class="wrap cols">
+      <h2>Follow along</h2>
+      <ul class="rows">
+        <li><a href="https://www.instagram.com/caspian.vortex/" target="_blank" rel="noopener">Instagram</a><small>@caspian.vortex, photos and highlights</small>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></li>
+        <li><a href="https://www.youtube.com/playlist?list=PLMyzlsdJSrdfO9VOyx3DuYd0lQqSUQHWy" target="_blank" rel="noopener">YouTube</a><small>Full games from the 2024-25 OVA season</small>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></li>
+        <li><a href="https://www.facebook.com/CaspianSportClub/" target="_blank" rel="noopener">Facebook</a><small>Caspian Sports Club, club news</small>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></li>
+        <li><a href="https://www.caspian-sportsclub.ca/" target="_blank" rel="noopener">Club website</a><small>Programs, camps, clinics and registration</small>
+          <svg class="go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></li>
+      </ul>
+    </div>
+  </section>
+
+  <section id="contact" class="dark">
+    <div class="wrap cols">
+      <h2>Contact</h2>
+      <div>
+        <p class="lede">Questions about the team? Send a message on Instagram, or use the club's contact page for registration, camps and tryouts.</p>
+        <div class="follow">
+          <a class="btn main" href="https://www.instagram.com/caspian.vortex/" target="_blank" rel="noopener">Message on Instagram</a>
+          <a class="btn" href="https://www.caspian-sportsclub.ca/contact-us" target="_blank" rel="noopener">Club contact page</a>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Caspian Vortex team page, run by team families. Player names and photos stay off this page to protect the kids.</p>
+    <p>The official club site is <a href="https://www.caspian-sportsclub.ca/" target="_blank" rel="noopener">caspian-sportsclub.ca</a>.</p>
   </div>
-</section>
-
-<section id="schedule">
-  <h2>Schedule</h2>
-  <div class="card">
-    <table>
-      <tr><th>Date</th><th>Opponent</th><th>Location</th></tr>
-      <tr><td>Oct 15, 7:00 PM</td><td>Opponent</td><td>Gym name</td></tr>
-      <tr><td>Oct 22, 7:00 PM</td><td>Opponent</td><td>Gym name</td></tr>
-    </table>
-  </div>
-</section>
-
-<footer>&copy; 2026 Caspian Vortex</footer>
+</footer>
 
 </body>
 </html>
